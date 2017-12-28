@@ -1,0 +1,39 @@
+<resources>
+    <string name="app_name">Wumpus</string>
+    <string name="left">LEFT</string>
+    <string name="up">UP</string>
+    <string name="down">DOWN</string>
+    <string name="right">RIGHT</string>
+    <string name="start">Start</string>
+    <string name="shoot">Change to shoot</string>
+    <string name="move">Change to move</string>
+    <string name="visible">In/visible</string>
+    <string name="rows">Rows:</string>
+    <string name="columns">Columns:</string>
+    <string name="holes">Holes:</string>
+    <string name="arrows">Arrows:</string>
+
+    <string name="pared_arriba">Percibo una pared por arriba</string>
+    <string name="pared_abajo">Percibo una pared por abajo</string>
+    <string name="pared_izquierda">Percibo una pared por la izquierda</string>
+    <string name="pared_derecha">Percibo una pared por la derecha</string>
+
+    <string name="wumpus_hedor">Percibo el hedor del Wumpus</string>
+    <string name="wumpus_see">Veo al Wumpus... estoy muerto</string>
+    <string name="wumpus_killed">He oído un grito del Wumpus</string>
+    <string name="wumpus_shoot">No he oído nada... Quedan %d flechas</string>
+
+    <string name="hole_brisa">Percibo una brisa</string>
+    <string name="hole_caida">Me he caído por un agujero... estoy muerto</string>
+
+    <string name="gold_brillo">Percibo el brillo del oro</string>
+
+    <string name="no_wumpus">El Wumpus ya está muerto</string>
+    <string name="no_arrows">No me quedan flechas...</string>
+    <string name="win">You WIN :)</string>
+    <string name="lose">You LOSE :(</string>
+    <string name="error_dimension">Error: too many sprites for input dimension</string>
+
+
+
+</resources>

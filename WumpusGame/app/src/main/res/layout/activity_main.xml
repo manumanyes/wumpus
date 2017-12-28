@@ -1,0 +1,206 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context="com.manumanyes.wumpus.WumpusActivity">
+
+    <TableLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        android:id="@+id/table_layout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="?android:attr/activatedBackgroundIndicator"
+        android:padding="5dp" />
+
+    <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        android:id="@+id/text_layout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="?android:attr/activatedBackgroundIndicator"
+        app:layout_constraintBottom_toTopOf="@id/config_layout">
+
+        <TextView
+            android:id="@+id/perceptions"
+            android:paddingLeft="5dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true" />
+
+    </RelativeLayout>
+
+    <RelativeLayout xmlns="http://schemas.android.com/apk/res/android"
+        android:id="@+id/config_layout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="?android:attr/activatedBackgroundIndicator"
+        android:gravity="center_horizontal"
+        app:layout_constraintBottom_toTopOf="@id/options_layout">
+
+        <TextView
+            android:id="@+id/row_lbl"
+            android:layout_height="wrap_content"
+            android:layout_width="wrap_content"
+            android:layout_centerVertical="true"
+            android:text="@string/rows" />
+
+        <EditText android:id="@+id/row_num"
+            android:layout_toRightOf="@+id/row_lbl"
+            android:layout_height="wrap_content"
+            android:layout_width="30dp"
+            android:digits="0123456789"
+            android:inputType="number"
+            android:maxLength="2"/>
+
+        <TextView
+            android:id="@+id/columns_lbl"
+            android:layout_toRightOf="@+id/row_num"
+            android:layout_height="wrap_content"
+            android:layout_width="wrap_content"
+            android:layout_centerVertical="true"
+            android:text="@string/columns" />
+
+        <EditText android:id="@+id/column_num"
+            android:layout_toRightOf="@+id/columns_lbl"
+            android:layout_height="wrap_content"
+            android:layout_width="30dp"
+            android:digits="0123456789"
+            android:inputType="number"
+            android:maxLength="2"/>
+
+        <TextView
+            android:id="@+id/holes_lbl"
+            android:layout_toRightOf="@+id/column_num"
+            android:layout_height="wrap_content"
+            android:layout_width="wrap_content"
+            android:layout_centerVertical="true"
+            android:text="@string/holes" />
+
+        <EditText android:id="@+id/holes_num"
+            android:layout_toRightOf="@+id/holes_lbl"
+            android:layout_height="wrap_content"
+            android:layout_width="30dp"
+            android:digits="0123456789"
+            android:inputType="number"
+            android:maxLength="2"/>
+
+        <TextView
+            android:id="@+id/arrows_lbl"
+            android:layout_toRightOf="@+id/holes_num"
+            android:layout_height="wrap_content"
+            android:layout_width="wrap_content"
+            android:layout_centerVertical="true"
+            android:text="@string/arrows" />
+
+        <EditText android:id="@+id/arrows_num"
+            android:layout_toRightOf="@+id/arrows_lbl"
+            android:layout_height="wrap_content"
+            android:layout_width="30dp"
+            android:digits="0123456789"
+            android:inputType="number"
+            android:maxLength="2"/>
+
+    </RelativeLayout>
+
+    <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        android:id="@+id/options_layout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="?android:attr/activatedBackgroundIndicator"
+        android:gravity="center_horizontal"
+        app:layout_constraintBottom_toTopOf="@id/buttons_layout">
+
+        <Button
+            android:id="@+id/button_action"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:onClick="changeAction"
+            android:text="@string/shoot"
+            tools:layout_editor_absoluteX="0dp"
+            tools:layout_editor_absoluteY="0dp" />
+
+        <Button
+            android:id="@+id/button_restart"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_toRightOf="@+id/button_action"
+            android:onClick="startNewGame"
+            android:text="@string/start"
+            tools:layout_editor_absoluteX="0dp"
+            tools:layout_editor_absoluteY="0dp" />
+
+        <Button
+            android:id="@+id/button_visible"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_toRightOf="@+id/button_restart"
+            android:onClick="makeSpritesVisible"
+            android:text="@string/visible"
+            tools:layout_editor_absoluteX="0dp"
+            tools:layout_editor_absoluteY="0dp" />
+
+    </RelativeLayout>
+
+    <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        android:id="@+id/buttons_layout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/text_layout"
+        android:background="?android:attr/activatedBackgroundIndicator"
+        android:gravity="center_horizontal"
+        app:layout_constraintBottom_toBottomOf="parent">
+
+        <Button
+            android:id="@+id/button_left"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:onClick="actionButton"
+            android:text="@string/left"
+            tools:layout_editor_absoluteX="0dp"
+            tools:layout_editor_absoluteY="0dp" />
+
+        <Button
+            android:id="@+id/button_up"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_toEndOf="@+id/button_left"
+            android:layout_toRightOf="@+id/button_left"
+            android:onClick="actionButton"
+            android:text="@string/up"
+            tools:layout_editor_absoluteX="0dp"
+            tools:layout_editor_absoluteY="0dp" />
+
+        <Button
+            android:id="@+id/button_down"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/button_up"
+            android:layout_toEndOf="@+id/button_left"
+            android:layout_toRightOf="@+id/button_left"
+            android:onClick="actionButton"
+            android:text="@string/down"
+            tools:layout_editor_absoluteX="0dp"
+            tools:layout_editor_absoluteY="0dp" />
+
+        <Button
+            android:id="@+id/button_right"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_toEndOf="@+id/button_up"
+            android:layout_toRightOf="@+id/button_up"
+            android:onClick="actionButton"
+            android:text="@string/right"
+            tools:layout_editor_absoluteX="0dp"
+            tools:layout_editor_absoluteY="0dp" />
+
+    </RelativeLayout>
+
+
+</android.support.constraint.ConstraintLayout>
